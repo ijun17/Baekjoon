@@ -3,8 +3,7 @@
 using namespace std;
 
 unsigned long long comb(int n, int r){
-    unsigned long long a=1;
-    unsigned long long b=1;
+    unsigned long long a=1,b=1;
     if(r<n-r){
         loop(i,n-r+1,n+1)a*=i;
         loop(i,1,r+1)b*=i;
