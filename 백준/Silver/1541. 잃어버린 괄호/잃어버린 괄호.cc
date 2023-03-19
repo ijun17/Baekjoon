@@ -9,21 +9,19 @@ int main(){
     string text;
     cin>>text;
     string num="";
-    int temp;
-    bool minusFlag=false;
-    char sign;
+    int sign=1;
     int sum=0;
     loop(i,0,text.length()){
         if(text[i]=='+'||text[i]=='-'){
-            sum+=stoi(num)*(minusFlag ? -1 : 1);
-            if(text[i]=='-')minusFlag=true;
+            sum+=stoi(num)*sign;
+            //마이너스 기호 뒤에 모든 수들이 마이너스면 최소값
+            if(text[i]=='-')sign=-1;
             num="";
         }else{
             num+=text[i];
-            if(i==text.length()-1)sum+=stoi(num)*(minusFlag ? -1 : 1);
         }
     }
+    sum+=stoi(num)*sign;;
     cout<<sum;
-
     return 0;
 }
