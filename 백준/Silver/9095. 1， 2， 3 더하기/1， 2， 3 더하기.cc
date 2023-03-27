@@ -7,7 +7,7 @@ int main(){
     cin.tie(0);
     int T,N;
     cin>>T;
-    long long num[11]={0,};
+    int num[11]={0,};
     num[1]=1;
     num[2]=2;
     num[3]=4;
