@@ -29,10 +29,9 @@ int main(){
     fill(vis, vis+1001, false);
     while(!dfs.empty()){
         int cur=dfs.top(); dfs.pop();
-        if(!vis[cur]){
-            vis[cur]=true;
-            cout<<cur<<' ';
-        }
+        if(vis[cur])continue;
+        vis[cur]=true;
+        cout<<cur<<' ';
         for(int i=graph[cur].size()-1; i>=0; i--){
             int node=graph[cur][i];
             if(vis[node])continue;
